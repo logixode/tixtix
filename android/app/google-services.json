@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "415937996291",
+    "project_id": "tixtix-88fe0",
+    "storage_bucket": "tixtix-88fe0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:415937996291:android:8b53a17a267cab96995036",
+        "android_client_info": {
+          "package_name": "com.example.tixtix"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "415937996291-eg53po87rgf9gj0ul3hck9rvu0hd4vng.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBszc8UTR1XC2jhgS8Fbdluu58_0F2gyDs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "415937996291-eg53po87rgf9gj0ul3hck9rvu0hd4vng.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
