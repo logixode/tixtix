@@ -29,7 +29,18 @@ class MyApp extends StatelessWidget {
                   print(result.user.toString());
               },
               child: Text('Sign Up'),
-            )
+            ),
+            ElevatedButton(
+                onPressed: () async {
+                  SignInSignUpResult result = await AuthServices.signIn(
+                      'rohmad1230@gmail.com', '12s3456');
+
+                  if (result.user == null)
+                    print(result.message);
+                  else
+                    print(result.user.toString());
+                },
+                child: Text('Sign In'))
           ],
         ),
       )),
