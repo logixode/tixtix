@@ -5,7 +5,6 @@ class UserServices {
       Firestore.instance.collection('user');
   static Future<void> updateUser(User user) async {
     // String genres = '';
-
     // for (var genre in user.selectedGenres) {
     //   genres += genre + (genre != user.selectedGenres.last ? ',' : '');
     // }

@@ -1,13 +1,13 @@
 part of 'models.dart';
 
 class User extends Equatable {
-  String id;
-  String email;
-  String name;
-  String profilePicture;
-  List<String> selectedGenres;
-  String selectedLanguage;
-  int balance;
+  final String id;
+  final String email;
+  final String name;
+  final String profilePicture;
+  final List<String> selectedGenres;
+  final String selectedLanguage;
+  final int balance;
 
   User(this.id, this.email,
       {this.name,

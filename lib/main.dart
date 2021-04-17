@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:provider/provider.dart';
+import 'package:tixtix/bloc/blocs.dart';
 import 'package:tixtix/services/services.dart';
+import 'package:tixtix/ui/pages/pages.dart';
 
 void main() {
   runApp(MyApp());
@@ -8,42 +12,15 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-          body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-              onPressed: () async {
-                SignInSignUpResult result = await AuthServices.signUp(
-                    'rohmad1230@gmail.com',
-                    '123456',
-                    'Rohmad',
-                    ['Action', 'Horror', 'Music', 'Drama'],
-                    'English');
-                if (result.user == null) {
-                  print(result.message);
-                } else
-                  print(result.user.toString());
-              },
-              child: Text('Sign Up'),
-            ),
-            ElevatedButton(
-                onPressed: () async {
-                  SignInSignUpResult result = await AuthServices.signIn(
-                      'rohmad1230@gmail.com', '12s3456');
-
-                  if (result.user == null)
-                    print(result.message);
-                  else
-                    print(result.user.toString());
-                },
-                child: Text('Sign In'))
-          ],
+    return StreamProvider.value(
+      value: AuthServices.userStrema,
+      child: MultiBlocProvider(
+        providers: [BlocProvider(create: (_) => PageBloc())],
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          home: Wrapper(),
         ),
-      )),
+      ),
     );
   }
 }
