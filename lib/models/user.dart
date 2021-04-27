@@ -9,12 +9,15 @@ class User extends Equatable {
   final String selectedLanguage;
   final int balance;
 
-  User(this.id, this.email,
-      {this.name,
-      this.profilePicture,
-      this.balance,
-      this.selectedGenres,
-      this.selectedLanguage});
+  User(
+    this.id,
+    this.email, {
+    this.name,
+    this.profilePicture,
+    this.balance,
+    this.selectedGenres,
+    this.selectedLanguage,
+  });
 
   @override
   String toString() {

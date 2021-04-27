@@ -35,7 +35,9 @@ class SplashPage extends StatelessWidget {
               margin: EdgeInsets.only(top: 70, bottom: 19),
               child: RaisedButton(
                   onPressed: () {
-                    context.bloc<PageBloc>().add(GoToLoginPage());
+                    context
+                        .bloc<PageBloc>()
+                        .add(GoToRegistrationPage(RegistrationData()));
                   },
                   color: mainColor,
                   child: Text(

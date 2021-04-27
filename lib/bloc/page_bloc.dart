@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:tixtix/bloc/blocs.dart';
+import 'package:tixtix/models/models.dart';
 
 part 'page_event.dart';
 part 'page_state.dart';
@@ -18,6 +20,13 @@ class PageBloc extends Bloc<PageEvent, PageState> {
       yield OnSplashPage();
     else if (event is GoToLoginPage)
       yield OnLoginPage();
-    else if (event is GoToMainPage) yield OnMainPage();
+    else if (event is GoToMainPage)
+      yield OnMainPage();
+    else if (event is GoToRegistrationPage)
+      yield OnRegistrationPage(event.registrationData);
+    else if (event is GoToPreferencesPage)
+      yield OnPreferencePage(event.registrationData);
+    else if (event is GoToAccountConfirmationPage)
+      yield OnAccountConfirmationPage(event.registrationData);
   }
 }
