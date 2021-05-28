@@ -12,12 +12,7 @@ class SplashPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              height: 136,
-              decoration: BoxDecoration(
-                  image: DecorationImage(image: AssetImage('assets/logo.png'))),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 70, bottom: 16),
+              margin: EdgeInsets.only(top: 0, bottom: 16),
               child: Text(
                 'New Experience',
                 style: blackTextFont.copyWith(fontSize: 20),
@@ -30,6 +25,12 @@ class SplashPage extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             Container(
+              height: 136,
+              margin: EdgeInsets.only(top: 50, bottom: 10),
+              decoration: BoxDecoration(
+                  image: DecorationImage(image: AssetImage('assets/logo.png'))),
+            ),
+            Container(
               width: 250,
               height: 46,
               margin: EdgeInsets.only(top: 70, bottom: 19),
@@ -39,7 +40,7 @@ class SplashPage extends StatelessWidget {
                         .bloc<PageBloc>()
                         .add(GoToRegistrationPage(RegistrationData()));
                   },
-                  color: mainColor,
+                  color: Color(0xFF7d7318),
                   child: Text(
                     'Get Started',
                     style: whiteTextFont.copyWith(fontSize: 16),
@@ -58,7 +59,10 @@ class SplashPage extends StatelessWidget {
                   },
                   child: Text(
                     'Sign In',
-                    style: purpleTextFont,
+                    style: TextStyle(
+                      color: Color(0xff79712b),
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 )
               ],

@@ -16,6 +16,16 @@ class MoviePage extends StatelessWidget {
           padding: EdgeInsets.fromLTRB(defaultMargin, 20, defaultMargin, 30),
           child: BlocBuilder<UserBloc, UserState>(builder: (_, userState) {
             if (userState is UserLoaded) {
+              print('picture: ' + userState.user.profilePicture);
+
+              if (imageFileToUpload != null)
+                uploadImage(imageFileToUpload).then((downloadURL) {
+                  imageFileToUpload = null;
+                  context
+                      .bloc<UserBloc>()
+                      .add(UpdateData(profileImage: downloadURL));
+                });
+
               return Row(
                 children: [
                   Container(
@@ -26,20 +36,22 @@ class MoviePage extends StatelessWidget {
                     ),
                     child: Stack(
                       children: [
-                        SpinKitFadingCircle(
-                          color: accentColor2,
-                          size: 50,
-                        ),
+                        (userState.user.profilePicture == '')
+                            ? SpinKitFadingCircle(
+                                color: accentColor2,
+                                size: 50,
+                              )
+                            : SizedBox(),
                         Container(
                           width: 50,
                           height: 50,
                           decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               image: DecorationImage(
-                                image: (userState.user.profilePicture == ''
+                                image: userState.user.profilePicture == ''
                                     ? AssetImage('assets/user_pic.png')
                                     : NetworkImage(
-                                        userState.user.profilePicture)),
+                                        userState.user.profilePicture),
                                 fit: BoxFit.cover,
                               )),
                         )

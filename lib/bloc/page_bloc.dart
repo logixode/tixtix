@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:tixtix/bloc/blocs.dart';
 import 'package:tixtix/models/models.dart';
 
 part 'page_event.dart';

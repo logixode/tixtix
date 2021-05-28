@@ -1,13 +1,13 @@
 part of 'widgets.dart';
 
 class SelectableBox extends StatelessWidget {
-  bool isSelected;
-  bool isEnabled;
-  double width;
-  double height;
-  String text;
-  Function onTap;
-  TextStyle textStyle;
+  final bool isSelected;
+  final bool isEnabled;
+  final double width;
+  final double height;
+  final String text;
+  final Function onTap;
+  final TextStyle textStyle;
 
   SelectableBox(
     this.text, {
